@@ -1,0 +1,14 @@
+
+/** ADD YOUR AWESOME CODES HERE **/
+
+body{
+    text-align: center;
+}
+form{
+    display: inline-block;
+}
+
+div.col-md-6{
+    display: block;
+    text-align: center;
+}

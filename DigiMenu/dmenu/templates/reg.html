@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en"><!-- Basic -->
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     <!-- Site Metas -->
+    <title>DigiMenu</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+	<!-- Site CSS -->
+    <link rel="stylesheet" href="/static/css/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/static/css/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/custom.css">
+
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+	<!-- Start header -->
+	<header class="top-navbar">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container">
+				<a class="navbar-brand" href="#">
+					<p style="font-weight: bolder;">DigiMenu</p>
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+				  <span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbars-rs-food">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item"><a class="nav-link" href="{{ url_for("users.home") }}">About</a></li>
+						<li class="nav-item"><a class="nav-link" href="{{ url_for("users.login") }}">Login</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+    </header>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="col-md-12 text-center">
+          {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+          {% block content %}{% endblock %}
+        </div>
+    <br>
+
+
+
+
+    	<div class="reservation-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="heading-title text-center">
+						<h2>Join Today</h2>
+					</div>
+				</div>
+			</div>
+            <form  method="post" action="">
+			<div class="row">
+				<div class="col-lg-12 col-sm-12 col-xs-12">
+					<div class="contact-block">
+						<form id="contactForm">
+							<div class="row">
+								<div class="col-md-6">
+                                    {{ form.hidden_tag()}}
+                                    <h3> {{ form.rest_name.label }} </h3>
+									<div class="col-md-12">
+										<div class="form-group">
+                                            {{ form.rest_name(class="form-control") }}
+											<div class="help-block with-errors"></div>
+										</div>
+									</div>
+                                    <h3>{{ form.rest_address.label }}</h3>
+									<div class="col-md-12">
+										<div class="form-group">
+                                            {{ form.rest_address(class="form-control") }}
+											<div class="help-block with-errors"></div>
+										</div>
+									</div>
+                                    <h3>{{ form.table_count.label }}</h3>
+									<div class="col-md-12">
+										<div class="form-group">
+                                            {{ form.table_count(class="form-control") }}
+											<div class="help-block with-errors"></div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<h3>{{ form.email.label }}</h3>
+									<div class="col-md-12">
+										<div class="form-group">
+                                            {{ form.email(class="form-control") }}
+											<div class="help-block with-errors"></div>
+										</div>
+									</div>
+                                    <h3>{{ form.password.label }}</h3>
+									<div class="col-md-12">
+										<div class="form-group">
+                                            {{ form.password(class="form-control") }}
+											<div class="help-block with-errors"></div>
+										</div>
+									</div>
+                                    <h3>{{ form.confirm_password.label }}</h3>
+									<div class="col-md-12">
+										<div class="form-group">
+                                            {{ form.confirm_password(class="form-control") }}
+											<div class="help-block with-errors"></div>
+										</div>
+									</div>
+								</div>
+                                <div class="col-md-12">
+                                    <a href="#">Terms and Conditions</a>
+                                    <div class="form-check">
+                                    {{ form.terms_cond(class="form-check-input") }}
+                                    {{ form.terms_cond.label(class="form-check-label") }}
+                                    </div>
+                                </div>
+								<div class="col-md-12">
+									<div class="submit-button text-center">
+                                        <div class="form-group">
+                                            {{ form.submit }}
+                                        </div>
+									</div>
+								</div>
+							</div>
+                            </form>
+                            <div class="border-top pt-3">
+    <small class="text-muted">
+        Already Have An Account ? <a class="ml-2" href="{{ url_for('users.login') }}">Sign In</a>
+    </small>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            </form>
+
+    </div>
+
+					</div>
+
+
+
+
+
+    <!-- ALL JS FILES -->
+	<script src="/static/js/jquery-3.2.1.min.js"></script>
+	<script src="/static/js/popper.min.js"></script>
+	<script src="/static/js/bootstrap.min.js"></script>
+
+
+ <!-- ALL PLUGINS -->
+	<script src="/static/js/jquery.superslides.min.js"></script>
+	<script src="/static/js/images-loded.min.js"></script>
+	<script src="/static/js/isotope.min.js"></script>
+	<script src="/static/js/baguetteBox.min.js"></script>
+	<script src="/static/js/picker.js"></script>
+	<script src="/static/js/picker.date.js"></script>
+	<script src="/static/js/picker.time.js"></script>
+	<script src="/static/js/legacy.js"></script>
+	<script src="/static/js/form-validator.min.js"></script>
+    <script src="/static/js/contact-form-script.js"></script>
+    <script src="/static/js/custom.js"></script>
+
+
+
+</body>
+<style>
+    div.panel{
+        overflow:scroll;
+    }
+</style>
+
+</html>

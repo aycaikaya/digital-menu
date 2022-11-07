@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en"><!-- Basic -->
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+   
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+     <!-- Site Metas -->
+    <title>DigiMenu</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/static/images/apple-touch-icon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+	<!-- Site CSS -->
+    <link rel="stylesheet" href="/static/css/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/static/css/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/custom.css">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+	<!-- Start header -->
+	<header class="top-navbar">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container">
+				<a class="navbar-brand" href="#">
+					<p style="font-weight: bolder;">DigiMenu</p>
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+				  <span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbars-rs-food">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item active"><a class="nav-link" href="{{ url_for("users.home") }}">About</a></li>
+						<li class="nav-item"><a class="nav-link" href="{{ url_for("users.login") }}">Login</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<!-- End header -->
+	{% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+	<!-- Start slides -->
+	<div id="slides" class="cover-slides">
+		<ul class="slides-container">
+			<li class="text-center">
+				<img src="/static/images/slider-01.jpg" alt="">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h1 class="m-b-20"><strong>What is Digital Menu?</strong></h1>
+                            <p style="font-weight: bolder" class="m-b-40">A necessity.</p>
+							<p class="m-b-40">Digital Menu is a platform where each customer is able to view<br>
+							the menu from their phone.</p>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="text-center">
+				<img src="/static/images/slider-02.jpg" alt="">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h1 class="m-b-20"><strong>What is Digital Menu?</strong></h1>
+							<p class="m-b-40">Digital Menu is a platform where each customer is able to view <br>
+							the menu from their phone.</p>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="text-center">
+				<img src="/static/images/slider-03.jpg" alt="">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h1 class="m-b-20"><strong>What is Digital Menu?</strong></h1>
+							<p class="m-b-40">Digital Menu is a platform where each customer is able to view <br>
+							the menu from their phone.</p>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+		<div class="slides-navigation">
+			<a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+			<a href="#" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+		</div>
+	</div>
+	<!-- End slides -->
+	
+	<!-- Start About -->
+	<div class="about-section-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-6 col-sm-12">
+					<img src="/static/images/hygine.png" alt="" class="img-fluid">
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-12 text-center">
+					<div class="inner-column">
+						<h1>Why Should You<span> Use It?</span></h1>
+						<p>One of the biggest concerns of the people during new-life after nCOVID-19 is the objects that are being publicly used.</p>
+						<p>Hygine is now, the most important factor to choose a restaurant to eat.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End About -->
+	
+	<!-- Start QT -->
+	<div class="qt-box qt-background">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 ml-auto mr-auto text-left">
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End QT -->
+	
+	<!-- Start Menu -->
+	<div class="menu-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="heading-title text-center">
+						<h2>What We Do?</h2>
+					</div>
+				</div>
+			</div>
+				
+			<div class="row special-list">
+                <p style="font-weight: bolder;font-size: large">We prepare your website and arrange QR codes.</p>
+				
+                <p style="font-weight: bolder; font-size: large">We make sure your menu is always updated and charming.</p>
+
+                <p style="font-weight: bolder; font-size: large">We provide your QR codes and QR holders for each table.</p>
+
+                <p style="font-weight: bolder; font-size: large">Your restaurant will have more chance to be chosen compared to others beacuse of the hygine factor.</p>
+            </div>
+        </div>
+	</div>
+<br>
+    <br>
+    <br>
+	<!-- End Menu -->
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+	
+	<!-- Start Contact info -->
+	<div class="contact-imfo-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<i class="fa fa-envelope"></i>
+					<div class="overflow-hidden">
+						<h4>Email</h4>
+						<p class="lead">
+							info@getdigimenu.com
+						</p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<i class="fa fa-envelope"></i>
+					<div class="overflow-hidden">
+						<h4>Email</h4>
+						<p class="lead">
+							getdigitalmenu@gmail.com
+						</p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<i class="fa fa-map-marker"></i>
+					<div class="overflow-hidden">
+						<h4>Location</h4>
+						<p class="lead">
+							Istanbul,Turkey
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Contact info -->
+	
+	<!-- Start Footer -->
+	<footer class="footer-area bg-f">
+		<div class="container">
+			<div class="row">
+					<ul  class="list-inline f-social">
+						<li class="list-inline-item"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+						<li class="list-inline-item"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+						<li class="list-inline-item"><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+						<li class="list-inline-item"><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+						<li class="list-inline-item"><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<div class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<p class="company-name">All Rights Reserved. &copy; 2020 <a href="#">DigitalMenu</a> Design By :
+					<a href="https://html.design/">html.design</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</footer>
+	<!-- End Footer -->
+	
+	<a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+
+	<!-- ALL JS FILES -->
+	<script src="/static/js/jquery-3.2.1.min.js"></script>
+	<script src="/static/js/popper.min.js"></script>
+	<script src="/static/js/bootstrap.min.js"></script>
+    <!-- ALL PLUGINS -->
+	<script src="/static/js/jquery.superslides.min.js"></script>
+	<script src="/static/js/images-loded.min.js"></script>
+	<script src="/static/js/isotope.min.js"></script>
+	<script src="/static/js/baguetteBox.min.js"></script>
+	<script src="/static/js/form-validator.min.js"></script>
+    <script src="/static/js/contact-form-script.js"></script>
+    <script src="/static/js/custom.js"></script>
+</body>
+</html>
